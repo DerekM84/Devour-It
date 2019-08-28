@@ -1,23 +1,22 @@
-var orm = require("./config/orm.js");
-
-// Code to call ORM functions
+var orm = require("../config/orm.js");
 
 var burger = {
 
     all: function(cb) {
     orm.selectAll("burgers", function(res) {
+      console.log(res);
      cb(res);
       });
     },
 
     create: function(cols, vals, cb) {
-      orm.updateDevoured("burgers", cols, vals, function(res) {
+      orm.addBurger("burgers", cols, vals, function(res) {
         cb(res);
       });
     },
-    
+
     update: function(objColVals, condition, cb) {
-      orm.addBurger("burgers", objColVals, condition, function(res) {
+      orm.updateDevoured("burgers", objColVals, condition, function(res) {
         cb(res);
       });
     },
@@ -28,5 +27,6 @@ var burger = {
       });
     }
   };
+
 
 module.exports = burger;

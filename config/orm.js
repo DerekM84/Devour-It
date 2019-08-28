@@ -1,4 +1,4 @@
-var connection = require("./config/connection.js")
+var connection = require("../config/connection.js");
 
 // 2 helper functions to produce proper queryStrings submission format for database requests. 
 
@@ -25,10 +25,10 @@ function objToSql(ob) {
 //   Build the query requests here, for listing burgers, creating one and deleting one.
 var orm = {
 
-    selectAll: function (table, column, cb) {
+    selectAll: function (table, cb) {
 
-        var string = "SELECT * FROM ?? WHERE ??";
-        connection.query(string, [table, column], function (err, res) {
+        var string = "SELECT * FROM ??";
+        connection.query(string , ["burgers"], function (err, res) {
             if (err) throw err;
             console.log(" ");
             cb(res);
@@ -36,8 +36,8 @@ var orm = {
     },
 
     updateDevoured: function (table, objColVals, condition, cb) {
+        console.log("made it to here");
         var queryString = "UPDATE " + table;
-
         queryString += " SET ";
         queryString += objToSql(objColVals);
         queryString += " WHERE ";
@@ -49,9 +49,9 @@ var orm = {
             cb(result);
         })
     },
-    
-    addBurger: function (table, cols, vals, cb) {
 
+    addBurger: function (table, cols, vals, cb) {
+        console.log("vals.length" + vals.length); 
         // producing a string using helper functions for syntax.
         var string = "INSERT INTO " + table;
         string += " (";
