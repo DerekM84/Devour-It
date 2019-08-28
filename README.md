@@ -10,5 +10,7 @@
 
 ## This app is deployed to Heroku @
 
-    https://afternoon-anchorage-15685.herokuapp.com/
+    
+    
+    [Check it out Live here!](https://afternoon-anchorage-15685.herokuapp.com/);
 
