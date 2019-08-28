@@ -10,7 +10,5 @@ Using CRUD (Create, Read, Update, Delete), we can make the models to form querie
 
 ## This app is deployed to Heroku @
 
-    
-    
-    [Check it out Live here!](https://afternoon-anchorage-15685.herokuapp.com/ "Burger Project");
+[Check it out Live here!](https://afternoon-anchorage-15685.herokuapp.com/ "Burger Project");
 
